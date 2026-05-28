@@ -1,0 +1,1 @@
+give @s diamond_chestplate[item_name={text:"jetpack"}]
