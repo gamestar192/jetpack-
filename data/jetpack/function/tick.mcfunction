@@ -7,5 +7,7 @@ execute as @a[nbt={equipment:{chest:{id:"minecraft:diamond_chestplate",component
 execute as @a[nbt={equipment:{chest:{id:"minecraft:diamond_chestplate",components:{"minecraft:item_name":"jetpack"}}}}] at @s if score @s sneak matches 1.. run particle flame ~ ~-.5 ~ .06 0 .06 .02 50
 execute as @a[nbt={equipment:{chest:{id:"minecraft:diamond_chestplate",components:{"minecraft:item_name":"jetpack"}}}}] at @s if score @s sneak matches 1.. run particle soul_fire_flame ~ ~-.1 ~ .07 0 .07 0 15
 execute as @a[nbt={equipment:{chest:{id:"minecraft:diamond_chestplate",components:{"minecraft:item_name":"jetpack"}}}}] at @s if score @s sneak matches 0 if block ~ ~-2 ~ air if block ~ ~-1 ~ air run particle smoke ~ ~-.2 ~ .05 0 .05 .01 10
-execute as @a[nbt=!{equipment:{chest:{id:"minecraft:diamond_chestplate",components:{"minecraft:item_name":"jetpack"}}}}] run effect clear @s slow_falling
+execute as @a[nbt={equipment:{chest:{id:"minecraft:diamond_chestplate",components:{"minecraft:item_name":"jetpack"}}}},tag=!jp] run tag @s add jp
+execute as @a[nbt=!{equipment:{chest:{id:"minecraft:diamond_chestplate",components:{"minecraft:item_name":"jetpack"}}}},tag=jp] run effect clear @s slow_falling
+execute as @a[nbt=!{equipment:{chest:{id:"minecraft:diamond_chestplate",components:{"minecraft:item_name":"jetpack"}}}},tag=jp] run tag @s remove jp
 execute as @a if score @s sneak matches 1.. run scoreboard players set @s sneak 0
